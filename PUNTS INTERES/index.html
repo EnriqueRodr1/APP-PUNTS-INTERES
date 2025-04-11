@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar y Mapear Equipos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+    <div id="list-container">
+        <h2>Filtrar y Ordenar Equipos</h2>
+        
+        <input type="file" id="csvFile" accept=".csv">
+
+        <label for="filterType">Filtrar por título:</label>
+        <select id="filterType">
+            <option value="all">Todos los equipos</option>
+            <option value="champions">Equipos con Champions League</option>
+            <option value="laliga">Equipos con solo LaLiga</option>
+            <option value="copadelrey">Equipos con solo Copa del Rey</option>
+        </select>
+
+        <label for="orderType">Ordenar:</label>
+        <select id="orderType">
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+        </select>
+
+        <input type="text" id="search" placeholder="Filtrar por nombre">
+
+        <ul id="list">
+            <p>No hay información para mostrar</p>
+        </ul>
+
+        <p>Número total: <span id="total-count">0</span></p>
+        <button id="clearButton">Limpiar Todo</button>
+
+        <div id="drop-area">
+            Arrastra un archivo CSV aquí para cargar la información
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
